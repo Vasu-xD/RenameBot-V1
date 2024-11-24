@@ -12,6 +12,95 @@ Whether you need to quickly rename your files or update the thumbnails, this bot
 
 ---
 
+# 1. Deploy Locally
+
+- To run the bot on your local machine or a VPS, follow these steps:
+
+## Prerequisites
+
+- Python 3.10 or higher installed.
+
+- A Telegram bot token (get it via @BotFather).
+
+- API ID and API HASH from my.telegram.org.
+
+- Admin Telegram User IDs (separated by commas).
+
+
+## Steps
+
+1. Clone the Repository
+
+```
+git clone https://github.com/VasuXD/RenameBot-V1.git
+cd RenameBot-V1
+```
+
+
+2. Install Dependencies Use pip to install the required libraries:
+
+```
+pip install -r requirements.txt
+```
+
+
+3. Set Up Environment Variables Rename the `example.env` file to `.env`:
+
+```
+mv example.env .env
+```
+
+Edit the .env file and replace placeholders with your details:
+
+```
+API_ID=123
+API_HASH=abcdefghijklmnopqrstuvwxyz
+BOT_TOKEN=1234567890:abcdergghijklmnopqrstuvwxyz
+ADMIN=12345,09876
+CAPTION=Your optional caption here
+```
+
+
+4. Run the Bot Start the bot using the following command:
+
+```
+python3 bot.py
+```
+
+---
+
+# 2. Deploy Using GitHub Workflows
+
+You can automate the deployment process using GitHub Actions.
+
+Steps
+
+1. Fork the Repository Fork this repository to your own GitHub account.
+
+
+2. Add Secrets Go to the Settings > Secrets and variables > Actions section of your forked repository. Add the following secrets:
+
+```
+API_ID: Your unique API ID.
+
+API_HASH: Your API hash.
+
+BOT_TOKEN: The token for your bot.
+
+ADMIN: The list of admin user IDs (separated by commas).
+
+CAPTION: Optional caption for renamed files.
+```
+
+
+3. Edit the Workflow Ensure the `.github/workflows/deploy.yml` file is properly configured. Update as necessary for your hosting platform (e.g., Heroku, VPS).
+
+
+4. Push Changes Any push to the main branch will trigger the workflow to deploy the bot.
+
+---
+
+
 ## **Commands:**
 - `/start` - Get started and see how the bot works!
 - `/rename` - Reply with a file to rename and give it a new name!
