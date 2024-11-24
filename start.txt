@@ -1,4 +1,2 @@
-# this is fake repository to run workflows on every push to main branch
-# runhehe
-
-wnwm
+# This is a dummy file to trigger workflows on every push to the main branch.
+# If you write ✍🏻 anything here, the workflow will be triggered and will get started.
